@@ -1,0 +1,23 @@
+# Render Blueprint for 100% Free Deployment of BranchLink
+# https://render.com
+services:
+  - type: web
+    name: branchlink
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    region: oregon
+    healthCheckPath: /api/branches
+    envVars:
+      - key: PORT
+        value: 8080
+      - key: JWT_SECRET
+        generateValue: true
+      # Optional: To connect a free external MySQL instance (e.g. TiDB Cloud Serverless or Aiven),
+      # uncomment and configure these environment variables in your Render Dashboard:
+      # - key: DB_URL
+      #   value: jdbc:mysql://<host>:4000/branchlink?sslMode=VERIFY_IDENTITY
+      # - key: DB_USER
+      #   value: <user>
+      # - key: DB_PASS
+      #   value: <password>

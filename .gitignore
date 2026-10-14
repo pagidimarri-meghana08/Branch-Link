@@ -1,0 +1,26 @@
+# Dependencies & Build artifacts
+**/node_modules/
+**/dist/
+**/target/
+*.jar
+*.war
+
+# Database & Runtime data
+**/data/
+*.mv.db
+*.trace.db
+**/uploads/*
+!**/uploads/.gitkeep
+
+# IDE & OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Logs & Temporary files
+*.log
+scratch/
+tmp/
+.temp/
